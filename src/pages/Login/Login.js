@@ -4,10 +4,12 @@ import {Image,View,TextInput,TouchableOpacity,Button,StyleSheet,Text} from "reac
 const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   const handleLogin = () => {
     if (username === 'a' && password === 'a') {
-      navigation.navigate('MainScreen');
+      navigation.navigate('MainScreen',{usernama:'utkan'});
+      setIsLoggedIn(true);
     } else {
       alert('Incorrect username or password');
     }

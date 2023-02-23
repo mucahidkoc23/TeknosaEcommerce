@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
 
 const Onboarding = ({navigation}) => {
