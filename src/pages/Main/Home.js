@@ -2,9 +2,16 @@ import React,{useState,useEffect} from "react";
 import { Text,View,StyleSheet,FlatList, Button} from "react-native";
 import axios from "axios";
 import Products from "./Products";
+//import {useDispatch} from "react-redux";
 
-const Home = () => {
+const Home = ({navigation}) => {
+  //const dispatch =useDispatch();
   const[product,setProduct] = useState([]);
+  
+  const Handle = (id) =>{
+    //dispatch({type:"ADD_CART", payload:{data:data.products}})
+    navigation.navigate("Cart" /*,{id}*/ );
+  }
   
 useEffect(() =>{
   fetchData();
@@ -19,8 +26,9 @@ useEffect(() =>{
     images = {item.images[0]}
     title = {item.title}
     price = {item.price}
+    press = {Handle /*(item.id)}*/ }
+    //mydata={item}   
     />
-
   return(
     <View style={styles.container}>
       <FlatList 
@@ -28,8 +36,6 @@ useEffect(() =>{
         renderItem = {renderProduct}
         keyExtractor={item => item.id}
       />
-      
-    
     </View>
   );
 };

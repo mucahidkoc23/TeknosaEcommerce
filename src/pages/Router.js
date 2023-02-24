@@ -7,6 +7,8 @@ import Login from "./Login/Login";
 import Home from "./Main/Home";
 import Cart from "./Main/Cart";
 import Onboarding from "./Login/Onboarding";
+//import Provider from "../Context/Provider";
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,13 +24,15 @@ const Main = () => {
 
 const Router = () =>{
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}}/>
-        <Stack.Screen name="Login" component={Login}/> 
-        <Stack.Screen name="MainScreen" component={Main} /> 
-      </Stack.Navigator>
-    </NavigationContainer>
+   //<Provider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Onboarding" component={Onboarding} options={{headerShown:false}}/>
+          <Stack.Screen name="Login" component={Login}/> 
+          <Stack.Screen name="MainScreen" component={Main} /> 
+        </Stack.Navigator>
+      </NavigationContainer> 
+    //</Provider>
   );
 };
 export default Router;

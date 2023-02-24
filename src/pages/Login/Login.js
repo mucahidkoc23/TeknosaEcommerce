@@ -1,15 +1,14 @@
 import React,{useState} from "react";
-import {Image,View,TextInput,TouchableOpacity,Button,StyleSheet,Text} from "react-native";
-
+import {Image,View,TextInput,TouchableOpacity,StyleSheet,Text} from "react-native";
 const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggin, setloggin] = useState(false);
   
   const handleLogin = () => {
     if (username === 'a' && password === 'a') {
-      navigation.navigate('MainScreen',{usernama:'utkan'});
-      setIsLoggedIn(true);
+      navigation.navigate('MainScreen');
+      setloggin(true);
     } else {
       alert('Incorrect username or password');
     }
